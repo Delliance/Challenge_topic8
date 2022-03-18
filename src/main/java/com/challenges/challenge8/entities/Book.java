@@ -42,6 +42,7 @@ public class Book {
     @Embedded
     private Tag tags;
 
+    @Enumerated (EnumType.STRING)
     @Column(
             name = "status",
             nullable = false

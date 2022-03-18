@@ -11,24 +11,14 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @AttributeOverrides({
         @AttributeOverride(
                 name = "name",
-                column = @Column(name = "guardian_name") //here we override the column guardian_name, that is how it is called in the database
-        ),
-        @AttributeOverride(
-                name = "email",
-                column = @Column(name = "guardian_email") //here we override the column guardian_email, that is how it is called in the database
-        ),
-        @AttributeOverride(
-                name = "mobile",
-                column = @Column(name = "guardian_mobile") //here we override the column guardian_email, that is how it is called in the database
+                column = @Column(name = "category_name")
         )
 })
 public class Category {
 
-    @Id
     @SequenceGenerator(
             name = "category_sequence",
             sequenceName = "category_sequence",
@@ -43,5 +33,10 @@ public class Category {
             updatable = false
     )
     private long id;
+
+    @Column (
+            unique = true,
+            nullable = false
+    )
     private String name;
 }
