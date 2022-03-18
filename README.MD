@@ -1,3 +1,5 @@
 WIP
 
-missing: repositories, services, controllers
+missing: Book post with data form and controllers
+
+Database used: postgres

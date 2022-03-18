@@ -1,5 +1,6 @@
 package com.challenges.challenge8.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -25,13 +26,21 @@ public class Book {
             generator = "book_sequence"
     )
     @Column(
-            name = "book_sequence",
+            name = "book_id",
             updatable = false
     )
     private long id;
 
-    @Embedded
-    private Category category;
+    @OneToOne(
+            cascade = CascadeType.ALL,
+            fetch =FetchType.EAGER,
+            optional = false
+    )
+    @JoinColumn (
+            name = "category_id",
+            referencedColumnName = "category_id"
+    )
+    private BookCategory bookCategory;
 
     @Column(
             name = "name",
@@ -39,8 +48,16 @@ public class Book {
     )
     private String name;
 
-    @Embedded
-    private Tag tags;
+    @OneToOne(
+            cascade = CascadeType.ALL,
+            fetch =FetchType.EAGER,
+            optional = false
+    )
+    @JoinColumn (
+            name = "tag_id",
+            referencedColumnName = "tag_id"
+    )
+    private BookTag tag;
 
     @Enumerated (EnumType.STRING)
     @Column(
@@ -48,4 +65,5 @@ public class Book {
             nullable = false
     )
     private BookStatus bookStatus;
+
 }

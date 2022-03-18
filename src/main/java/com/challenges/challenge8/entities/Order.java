@@ -29,7 +29,7 @@ public class Order {
             generator = "order_sequence"
     )
     @Column(
-            name = "order_sequence",
+            name = "order_id",
             updatable = false
     )
     private long id;

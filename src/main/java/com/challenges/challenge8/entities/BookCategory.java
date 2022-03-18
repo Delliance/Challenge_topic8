@@ -6,29 +6,24 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Embeddable
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@AttributeOverrides({
-        @AttributeOverride(
-                name = "name",
-                column = @Column(name = "tag_name")
-        )
-})
-public class Tag {
+public class BookCategory {
 
+    @Id
     @SequenceGenerator(
-            name = "tag_sequence",
-            sequenceName = "tag_sequence",
+            name = "category_sequence",
+            sequenceName = "category_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "tag_sequence"
+            generator = "category_sequence"
     )
     @Column(
-            name = "tag_sequence",
+            name = "category_id",
             updatable = false
     )
     private long id;
@@ -38,4 +33,9 @@ public class Tag {
             nullable = false
     )
     private String name;
+
+    @OneToOne (
+            mappedBy = "bookCategory"
+    )
+    private Book book;
 }

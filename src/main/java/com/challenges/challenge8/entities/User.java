@@ -28,7 +28,7 @@ public class User {
             generator = "user_sequence"
     )
     @Column(
-            name = "user_sequence",
+            name = "user_id",
             updatable = false
     )
     private long id;
