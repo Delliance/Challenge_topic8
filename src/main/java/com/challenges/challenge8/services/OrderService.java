@@ -1,13 +1,10 @@
 package com.challenges.challenge8.services;
 
 import com.challenges.challenge8.entities.Order;
-import com.challenges.challenge8.entities.OrderStatus;
+import com.challenges.challenge8.enums.OrderStatus;
 import com.challenges.challenge8.repositories.OrderRepository;
 import lombok.AllArgsConstructor;
-import org.aspectj.weaver.ast.Or;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor

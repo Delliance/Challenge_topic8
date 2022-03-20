@@ -1,6 +1,6 @@
 package com.challenges.challenge8.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.challenges.challenge8.enums.BookStatus;
 import lombok.*;
 
 import javax.persistence.*;

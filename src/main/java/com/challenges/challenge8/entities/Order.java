@@ -1,5 +1,6 @@
 package com.challenges.challenge8.entities;
 
+import com.challenges.challenge8.enums.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

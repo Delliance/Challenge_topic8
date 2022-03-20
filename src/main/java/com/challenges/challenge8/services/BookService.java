@@ -1,7 +1,7 @@
 package com.challenges.challenge8.services;
 
 import com.challenges.challenge8.entities.Book;
-import com.challenges.challenge8.entities.BookStatus;
+import com.challenges.challenge8.enums.BookStatus;
 import com.challenges.challenge8.repositories.BookRepository;
 import lombok.AllArgsConstructor;
 import org.hibernate.boot.model.naming.IllegalIdentifierException;

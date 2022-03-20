@@ -2,7 +2,6 @@ package com.challenges.challenge8.repositories;
 
 import com.challenges.challenge8.entities.Book;
 import com.challenges.challenge8.entities.BookCategory;
-import com.challenges.challenge8.entities.BookStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
