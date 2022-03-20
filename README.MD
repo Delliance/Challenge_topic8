@@ -1,5 +1,6 @@
-WIP
+Completed challenge
 
-missing: Book post with data form and controllers
 
-Database used: postgres
+
+Database created with: postgres
+Database name: bookstore

@@ -41,7 +41,7 @@ public class BookService {
     public void updateBook(Book book){
         Optional<Book> bookOptional = bookRepository.findById(book.getId());
 
-        if (!bookOptional.isPresent()){
+        if (bookOptional.isEmpty()){
             throw new IllegalIdentifierException("The book with id: "+book.getId()+" does not exist");
         }
 
@@ -70,6 +70,21 @@ public class BookService {
 
     public List<Book> getBooksById (long id){
         return bookRepository.findBooksById(id);
+    }
+
+    @Transactional
+    public void updateBookNameAndStatusById (long id, String name, BookStatus status){
+
+        Optional<Book> bookOptional = bookRepository.findById(id);
+
+        if (bookOptional.isEmpty()){
+            throw new IllegalIdentifierException("The book with id: "+id+" does not exist");
+        }
+
+        bookRepository.updateBookNameById(name, id);
+
+        bookRepository.updateBookStatusById(status, id);
+
     }
 
 //    TODO: post method to update books with form data

@@ -35,6 +35,11 @@ public class BookController {
         return bookService.getBooksById(id);
     }
 
+    @PostMapping(path = "/{id}")
+    public void updateBookNameAndStatusById(@PathVariable("id") long id, @RequestBody String name, @RequestBody String status){
+        bookService.updateBookNameAndStatusById(id, name, BookStatus.valueOf(status));
+    }
+
 
 
 }
